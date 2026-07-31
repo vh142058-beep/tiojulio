@@ -1,0 +1,727 @@
+/* ==========================================
+   TIO JULIO SERRA - TRANSPORTE ESCOLAR
+   Visual Moderno, Acolhedor e Infantil/Amigável
+   ========================================== */
+
+:root {
+    /* Paleta de Cores Escolar Refinada e Vibrante */
+    --primary-yellow: #FFD100;   /* Amarelo Escolar Vibrante */
+    --yellow-hover: #E6BC00;
+    --accent-blue: #0A192F;     /* Fundo Dark Elegante */
+    --blue-medium: #112240;     /* Azul Médio */
+    --blue-lighter: #1D3156;    /* Azul Suave */
+    --accent-orange: #FF9800;   /* Laranja Quente */
+    --whatsapp-green: #25D366;  /* Verde WhatsApp Confiável */
+    
+    --white: #FFFFFF;
+    --text-on-dark: #E2E8F0;    /* Texto Principal em Fundo Escuro */
+    --text-title: #FFFFFF;      /* Título em Fundo Escuro */
+    --text-dark: #1E1E1E;       /* Texto em Fundo Claro */
+    --text-muted: #8892B0;      /* Texto Desfocado/Muted */
+    
+    --shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+    --shadow-hover: 0 18px 45px rgba(255, 209, 0, 0.25);
+    --radius: 16px;             /* Radius arredondado e amigável */
+    --transition: all 0.35s cubic-bezier(0.3, 1, 0.3, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', 'Inter', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--accent-blue);
+}
+
+body { overflow-x: hidden; }
+
+/* ==========================================
+   Navegação (Glassmorphism Dark)
+   ========================================== */
+.navbar {
+    position: fixed; top: 0; left: 0; width: 100%;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 8%;
+    background: rgba(10, 25, 47, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.logo { display: flex; align-items: center; gap: 14px; }
+
+.logo-emblem {
+    background: linear-gradient(135deg, #FFD100 0%, #FF9800 100%);
+    color: #1A1A1A;
+    width: 48px; height: 48px; border-radius: 14px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-size: 1.2rem; font-weight: 700;
+    box-shadow: 0 6px 16px rgba(255, 152, 0, 0.4);
+    border: 2px solid #FFFFFF;
+}
+
+.logo-emblem span { font-size: 0.65rem; font-family: 'Fredoka', sans-serif; font-weight: 700; line-height: 1; margin-top: 1px; }
+
+.logo-text h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700; font-size: 1.45rem; letter-spacing: 0.5px;
+    line-height: 1.1; color: var(--text-title);
+}
+
+.logo-text h1 span { color: var(--primary-yellow); }
+
+.logo-text small {
+    display: block; font-size: 0.65rem; font-weight: 600;
+    color: var(--text-muted); letter-spacing: 2px;
+}
+
+.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-links a {
+    text-decoration: none; color: var(--text-on-dark);
+    font-weight: 500; font-size: 0.95rem; transition: var(--transition);
+}
+.nav-links a:hover { color: var(--primary-yellow); transform: translateY(-1px); }
+
+.btn-nav {
+    background: var(--primary-yellow);
+    color: var(--text-dark) !important;
+    border: none;
+    padding: 10px 22px; border-radius: 30px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600; font-size: 0.95rem;
+    box-shadow: 0 4px 15px rgba(255, 209, 0, 0.35);
+}
+.btn-nav:hover { background: var(--yellow-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 209, 0, 0.5); }
+
+/* ==========================================
+   Hero Section
+   ========================================= */
+.hero {
+    min-height: 100vh;
+    padding: 140px 8% 80px 8%;
+    position: relative;
+    display: flex; align-items: center;
+}
+
+.hero-bg-ai {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: url('imagens/van-1.jpeg') center/cover no-repeat fixed;
+    filter: blur(8px) contrast(1.1);
+    transform: scale(1.05);
+    z-index: -1;
+}
+
+.hero-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(160deg, rgba(10, 25, 47, 0.94) 0%, rgba(17, 34, 64, 0.88) 100%);
+    z-index: 0;
+}
+
+.hero-container {
+    position: relative; z-index: 1;
+    display: flex; justify-content: center; width: 100%; text-align: center;
+}
+
+.hero-content {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 24px; max-width: 850px;
+}
+
+.tag-escolar {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255, 209, 0, 0.15);
+    color: var(--primary-yellow);
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600; font-size: 0.9rem; letter-spacing: 0.5px;
+    padding: 8px 22px; border-radius: 30px;
+    border: 1px solid rgba(255, 209, 0, 0.4);
+    box-shadow: 0 4px 15px rgba(255, 209, 0, 0.15);
+}
+
+.hero-content h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700; font-size: 3.1rem; line-height: 1.15;
+    color: var(--text-title);
+}
+
+.hero-content h2 span {
+    color: var(--primary-yellow);
+    position: relative;
+    display: inline-block;
+}
+
+.hero-content p {
+    font-size: 1.18rem; color: var(--text-on-dark);
+    line-height: 1.7; font-weight: 400;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-whatsapp {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--whatsapp-green); color: var(--white);
+    text-decoration: none; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.15rem;
+    padding: 16px 36px; border-radius: 40px;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    transition: var(--transition);
+}
+
+.btn-whatsapp:hover {
+    background: #1eb956; transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+}
+
+.btn-whatsapp i {
+    font-size: 1.4rem;
+}
+
+.pulse { animation: pulse 2.5s infinite; }
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+    70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* ==========================================
+   Secção Sobre
+   ========================================= */
+.sobre {
+    padding: 100px 8%;
+    background: var(--blue-medium);
+    color: var(--text-on-dark);
+    text-align: center;
+}
+
+.sobre .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-badge {
+    color: var(--primary-yellow); font-family: 'Fredoka', sans-serif; font-weight: 600;
+    font-size: 0.95rem; margin-bottom: 12px;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255, 209, 0, 0.1); padding: 6px 18px; border-radius: 20px;
+    border: 1px solid rgba(255, 209, 0, 0.25);
+}
+
+.sobre h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700; font-size: 2.3rem; margin-bottom: 25px;
+    color: var(--text-title);
+}
+
+.sobre p {
+    font-size: 1.15rem; color: var(--text-on-dark);
+    line-height: 1.8; font-weight: 400; max-width: 800px; margin: 0 auto;
+}
+
+/* ==========================================
+   Diferenciais
+   ========================================= */
+.diferenciais {
+    padding: 100px 8%;
+    background: #FFFDF5; /* Fundo Creme Suave Acolhedor */
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700; font-size: 2.4rem;
+    margin-bottom: 50px; color: var(--text-dark);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-yellow);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.section-sub {
+    color: #4A5568;
+    font-size: 1.05rem;
+    margin-top: -35px;
+    margin-bottom: 45px;
+    font-weight: 400;
+}
+
+.cards-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 35px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--white);
+    padding: 40px 30px; border-radius: 20px;
+    transition: var(--transition);
+    border: 2px solid #FFE680;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-yellow), var(--accent-orange));
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-yellow);
+}
+
+.icon-wrap {
+    font-size: 2.8rem; color: var(--accent-orange);
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.card h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700; font-size: 1.45rem; margin-bottom: 12px; color: var(--text-dark);
+}
+
+.card p { color: var(--text-muted); font-size: 0.98rem; line-height: 1.7; font-weight: 400; }
+
+/* ==========================================
+   Secção Escolas Atendidas
+   ========================================== */
+.escolas {
+    padding: 100px 8%;
+    background: var(--blue-medium);
+    color: var(--text-on-dark);
+    text-align: center;
+}
+
+.escolas .section-title {
+    color: var(--text-title);
+}
+
+.escolas .section-title::after {
+    background: var(--primary-yellow);
+}
+
+.escolas .section-sub {
+    color: var(--text-on-dark);
+}
+
+.escolas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+
+.escola-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 32px 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 2px solid #FFE680;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.escola-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 45px rgba(255, 209, 0, 0.3);
+    border-color: var(--primary-yellow);
+}
+
+.escola-logo-wrap {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: #FAFAFA;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #EEEEEE;
+}
+
+.escola-logo-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.escola-card:hover .escola-logo-wrap img {
+    transform: scale(1.06);
+}
+
+.escola-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 209, 0, 0.15);
+    color: #B78100;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    padding: 4px 14px;
+    border-radius: 15px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 209, 0, 0.3);
+}
+
+.escola-info h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    line-height: 1.35;
+}
+
+.escola-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* ==========================================
+   Secção Nossa Van (Fotos Reais)
+   ========================================== */
+.van-section {
+    padding: 100px 8%;
+    background: var(--blue-lighter);
+    color: var(--text-on-dark);
+    text-align: center;
+}
+
+.van-section .section-title {
+    color: var(--text-title);
+}
+
+.van-section .section-title::after {
+    background: var(--primary-yellow);
+}
+
+.van-section .section-sub {
+    color: var(--text-on-dark);
+}
+
+.van-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 40px auto 0;
+}
+
+.van-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    height: 320px;
+    cursor: pointer;
+    border: 3px solid rgba(255, 209, 0, 0.35);
+    transition: var(--transition);
+}
+
+.van-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.van-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-yellow);
+    box-shadow: 0 18px 45px rgba(255, 209, 0, 0.3);
+}
+
+.van-card:hover img {
+    transform: scale(1.08);
+}
+
+.van-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 20px 20px;
+    background: linear-gradient(transparent, rgba(10, 25, 47, 0.92));
+    color: var(--text-title);
+    text-align: left;
+}
+
+.van-card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--primary-yellow);
+    color: var(--text-dark);
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.van-card-overlay h4 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--text-title);
+    line-height: 1.3;
+}
+
+/* ==========================================
+   Secção Vídeo Desenho Animado (Amarelo & Branco)
+   ========================================== */
+.video-section {
+    padding: 100px 8%;
+    background: linear-gradient(135deg, #FFD100 0%, #FFC107 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.video-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--white);
+    color: var(--text-dark);
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 8px 22px;
+    border-radius: 30px;
+    margin-bottom: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.video-badge i {
+    color: var(--accent-orange);
+}
+
+.video-title {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 2.6rem;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.video-sub {
+    color: #2D2D2D;
+    font-size: 1.15rem;
+    margin-bottom: 40px;
+    font-weight: 500;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.video-frame-wrapper {
+    background: var(--white);
+    padding: 16px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    border: 4px solid var(--white);
+}
+
+.video-frame-wrapper video {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    border-radius: 16px;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: #000000;
+}
+
+/* ==========================================
+   WhatsApp Flutuante
+   ========================================== */
+.whatsapp-float {
+    position: fixed; bottom: 30px; right: 30px;
+    width: 62px; height: 62px;
+    background: #25D366; color: #FFF;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 34px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+    z-index: 1000; text-decoration: none; transition: var(--transition);
+    border: 2px solid #FFFFFF;
+}
+.whatsapp-float:hover { transform: scale(1.15) rotate(10deg); }
+
+/* ==========================================
+   Rodapé
+   ========================================== */
+footer {
+    background: var(--accent-blue);
+    color: var(--text-muted);
+    text-align: center; padding: 30px 8%;
+    font-size: 0.88rem; font-weight: 400; letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   Scroll Reveal
+   ========================================== */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* ==========================================
+   OTIMIZAÇÕES EXCLUSIVAS PARA CELULAR (MOBILE)
+   ========================================== */
+@media (max-width: 900px) {
+    .nav-links { gap: 15px; }
+    .hero { padding: 120px 6% 60px 6%; }
+    .hero-content h2 { font-size: 2.2rem; }
+    .btn-whatsapp { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 640px) {
+    .navbar {
+        padding: 12px 4%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .logo {
+        gap: 10px;
+    }
+
+    .logo-emblem {
+        width: 42px;
+        height: 42px;
+        font-size: 1.05rem;
+    }
+
+    .logo-text h1 {
+        font-size: 1.2rem;
+    }
+
+    .logo-text small {
+        font-size: 0.55rem;
+    }
+
+    .hero {
+        padding: 110px 5% 55px;
+        background-attachment: scroll;
+    }
+
+    .tag-escolar {
+        font-size: 0.78rem;
+        padding: 6px 16px;
+        text-align: center;
+    }
+
+    .hero-content h2 {
+        font-size: 1.85rem;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 0.98rem;
+        line-height: 1.6;
+    }
+
+    .btn-whatsapp {
+        font-size: 1rem;
+        padding: 14px 24px;
+        width: 100%;
+    }
+
+    .sobre, .diferenciais, .escolas, .van-section, .video-section {
+        padding: 60px 4%;
+    }
+
+    .sobre h2,
+    .section-title,
+    .video-title {
+        font-size: 1.75rem;
+    }
+
+    .video-sub {
+        font-size: 0.98rem;
+        margin-bottom: 25px;
+    }
+
+    .video-frame-wrapper {
+        padding: 8px;
+        border-radius: 18px;
+        border-width: 2px;
+    }
+
+    .video-frame-wrapper video {
+        border-radius: 12px;
+    }
+
+    .cards-grid,
+    .escolas-grid,
+    .van-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .van-card {
+        height: 250px;
+    }
+
+    .escola-card {
+        padding: 24px 18px;
+    }
+
+    .escola-logo-wrap {
+        height: 110px;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .escola-info h3 {
+        font-size: 1.15rem;
+    }
+
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 54px;
+        height: 54px;
+        font-size: 28px;
+    }
+}
